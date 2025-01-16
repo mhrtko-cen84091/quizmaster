@@ -35,3 +35,15 @@ Feature: Answering a quiz question with multiple choice
       | Morocco | Almost :D        |
       | Spain   |                  |
     And I see the question explanation
+
+@ignore
+  Scenario:
+    When I take question "Europe"
+    And I answer "France, Italy, Spain"
+    Then I see the answer explanations for answers
+      | answer  | explanation      |
+      | Italy   | And where is it? |
+      | France  | You wish!        |
+      | Morocco |                  |
+      | Spain   |  Manana!         |
+    And I see the question explanation
